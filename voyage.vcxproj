@@ -69,7 +69,18 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)directx\inc;$(SolutionDir)cerasus\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)directx\lib\x86;$(SolutionDir)cerasus\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>tmp\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)directx\inc;$(SolutionDir)cerasus\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)directx\lib\x86;$(SolutionDir)cerasus\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>tmp\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -79,7 +90,7 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -109,7 +120,7 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
@@ -136,6 +147,121 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="comm.h" />
+    <ClInclude Include="creasus\inc\CerasusAlgorithm.h" />
+    <ClInclude Include="creasus\inc\Cerasusfps.h" />
+    <ClInclude Include="creasus\inc\CerasusTypes.h" />
+    <ClInclude Include="creasus\inc\CerasusUnit.h" />
+    <ClInclude Include="creasus\inc\DirectCommon.h" />
+    <ClInclude Include="creasus\inc\DirectFont.h" />
+    <ClInclude Include="creasus\inc\DirectGraphics.h" />
+    <ClInclude Include="creasus\inc\DirectGraphics11.h" />
+    <ClInclude Include="creasus\inc\DirectGraphics2D.h" />
+    <ClInclude Include="creasus\inc\DirectGraphics3D.h" />
+    <ClInclude Include="creasus\inc\DirectInput.h" />
+    <ClInclude Include="creasus\inc\DirectMesh.h" />
+    <ClInclude Include="creasus\inc\DirectSafe.h" />
+    <ClInclude Include="creasus\inc\DirectShow.h" />
+    <ClInclude Include="creasus\inc\DirectSound.h" />
+    <ClInclude Include="creasus\inc\DirectSprite.h" />
+    <ClInclude Include="creasus\inc\DirectSurface.h" />
+    <ClInclude Include="creasus\inc\DirectTemplate.h" />
+    <ClInclude Include="creasus\inc\DirectTexture.h" />
+    <ClInclude Include="creasus\inc\DirectThreadSafe.h" />
+    <ClInclude Include="creasus\inc\DirectTypes.h" />
+    <ClInclude Include="creasus\inc\DXUICommon.h" />
+    <ClInclude Include="creasus\inc\DXUIManager.h" />
+    <ClInclude Include="creasus\inc\DXUIWindow.h" />
+    <ClInclude Include="creasus\inc\SakuraBlend.h" />
+    <ClInclude Include="creasus\inc\SakuraButton.h" />
+    <ClInclude Include="creasus\inc\SakuraCheckBox.h" />
+    <ClInclude Include="creasus\inc\SakuraComboBox.h" />
+    <ClInclude Include="creasus\inc\SakuraControl.h" />
+    <ClInclude Include="creasus\inc\SakuraDialog.h" />
+    <ClInclude Include="creasus\inc\SakuraEditBox.h" />
+    <ClInclude Include="creasus\inc\SakuraElement.h" />
+    <ClInclude Include="creasus\inc\SakuraListBox.h" />
+    <ClInclude Include="creasus\inc\SakuraRadioButton.h" />
+    <ClInclude Include="creasus\inc\SakuraResource.h" />
+    <ClInclude Include="creasus\inc\SakuraResourceManager.h" />
+    <ClInclude Include="creasus\inc\SakuraScrollBar.h" />
+    <ClInclude Include="creasus\inc\SakuraSlider.h" />
+    <ClInclude Include="creasus\inc\SakuraStatic.h" />
+    <ClInclude Include="creasus\inc\SakuraUICommon.h" />
+    <ClInclude Include="creasus\inc\SakuraUnit.h" />
+    <ClInclude Include="directx\inc\audiodefs.h" />
+    <ClInclude Include="directx\inc\comdecl.h" />
+    <ClInclude Include="directx\inc\D2D1.h" />
+    <ClInclude Include="directx\inc\D2D1Helper.h" />
+    <ClInclude Include="directx\inc\D2DBaseTypes.h" />
+    <ClInclude Include="directx\inc\D2Derr.h" />
+    <ClInclude Include="directx\inc\D3D10.h" />
+    <ClInclude Include="directx\inc\D3D10effect.h" />
+    <ClInclude Include="directx\inc\d3d10misc.h" />
+    <ClInclude Include="directx\inc\d3d10sdklayers.h" />
+    <ClInclude Include="directx\inc\D3D10shader.h" />
+    <ClInclude Include="directx\inc\D3D10_1.h" />
+    <ClInclude Include="directx\inc\D3D10_1shader.h" />
+    <ClInclude Include="directx\inc\D3D11.h" />
+    <ClInclude Include="directx\inc\D3D11SDKLayers.h" />
+    <ClInclude Include="directx\inc\D3D11Shader.h" />
+    <ClInclude Include="directx\inc\d3d9.h" />
+    <ClInclude Include="directx\inc\d3d9caps.h" />
+    <ClInclude Include="directx\inc\d3d9types.h" />
+    <ClInclude Include="directx\inc\D3Dcommon.h" />
+    <ClInclude Include="directx\inc\D3Dcompiler.h" />
+    <ClInclude Include="directx\inc\D3DCSX.h" />
+    <ClInclude Include="directx\inc\D3DX10.h" />
+    <ClInclude Include="directx\inc\d3dx10async.h" />
+    <ClInclude Include="directx\inc\D3DX10core.h" />
+    <ClInclude Include="directx\inc\D3DX10math.h" />
+    <ClInclude Include="directx\inc\D3DX10mesh.h" />
+    <ClInclude Include="directx\inc\D3DX10tex.h" />
+    <ClInclude Include="directx\inc\D3DX11.h" />
+    <ClInclude Include="directx\inc\D3DX11async.h" />
+    <ClInclude Include="directx\inc\D3DX11core.h" />
+    <ClInclude Include="directx\inc\D3DX11tex.h" />
+    <ClInclude Include="directx\inc\d3dx9.h" />
+    <ClInclude Include="directx\inc\d3dx9anim.h" />
+    <ClInclude Include="directx\inc\d3dx9core.h" />
+    <ClInclude Include="directx\inc\d3dx9effect.h" />
+    <ClInclude Include="directx\inc\d3dx9math.h" />
+    <ClInclude Include="directx\inc\d3dx9mesh.h" />
+    <ClInclude Include="directx\inc\d3dx9shader.h" />
+    <ClInclude Include="directx\inc\d3dx9shape.h" />
+    <ClInclude Include="directx\inc\d3dx9tex.h" />
+    <ClInclude Include="directx\inc\d3dx9xof.h" />
+    <ClInclude Include="directx\inc\Dcommon.h" />
+    <ClInclude Include="directx\inc\dinput.h" />
+    <ClInclude Include="directx\inc\dinputd.h" />
+    <ClInclude Include="directx\inc\dsconf.h" />
+    <ClInclude Include="directx\inc\dsetup.h" />
+    <ClInclude Include="directx\inc\dsound.h" />
+    <ClInclude Include="directx\inc\DWrite.h" />
+    <ClInclude Include="directx\inc\dxdiag.h" />
+    <ClInclude Include="directx\inc\DxErr.h" />
+    <ClInclude Include="directx\inc\dxfile.h" />
+    <ClInclude Include="directx\inc\DXGI.h" />
+    <ClInclude Include="directx\inc\DXGIFormat.h" />
+    <ClInclude Include="directx\inc\DXGIType.h" />
+    <ClInclude Include="directx\inc\dxsdkver.h" />
+    <ClInclude Include="directx\inc\gameux.h" />
+    <ClInclude Include="directx\inc\PIXPlugin.h" />
+    <ClInclude Include="directx\inc\rmxfguid.h" />
+    <ClInclude Include="directx\inc\rmxftmpl.h" />
+    <ClInclude Include="directx\inc\rpcsal.h" />
+    <ClInclude Include="directx\inc\X3DAudio.h" />
+    <ClInclude Include="directx\inc\xact3.h" />
+    <ClInclude Include="directx\inc\xact3d3.h" />
+    <ClInclude Include="directx\inc\xact3wb.h" />
+    <ClInclude Include="directx\inc\XAPO.h" />
+    <ClInclude Include="directx\inc\XAPOBase.h" />
+    <ClInclude Include="directx\inc\XAPOFX.h" />
+    <ClInclude Include="directx\inc\XAudio2.h" />
+    <ClInclude Include="directx\inc\XAudio2fx.h" />
+    <ClInclude Include="directx\inc\XDSP.h" />
+    <ClInclude Include="directx\inc\XInput.h" />
+    <ClInclude Include="directx\inc\xma2defs.h" />
+    <ClInclude Include="directx\inc\xnamath.h" />
     <ClInclude Include="proc.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="utils.h" />
@@ -145,6 +271,15 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\icon\sakura.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="directx\inc\D3DX10math.inl" />
+    <None Include="directx\inc\d3dx9math.inl" />
+    <None Include="directx\inc\D3DX_DXGIFormatConvert.inl" />
+    <None Include="directx\inc\xnamathconvert.inl" />
+    <None Include="directx\inc\xnamathmatrix.inl" />
+    <None Include="directx\inc\xnamathmisc.inl" />
+    <None Include="directx\inc\xnamathvector.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

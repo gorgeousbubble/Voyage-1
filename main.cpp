@@ -10,8 +10,7 @@
 * @version	v1.00a
 * @date		2019-10-08
 */
-#include "proc.h"
-#include "utils.h"
+#include "comm.h"
 
 /*
 ** WinMain(IN HINSTANCE hInstance, IN HINSTANCE hPrevInstance, IN LPSTR lpCmdLine, IN int nCmdShow)
